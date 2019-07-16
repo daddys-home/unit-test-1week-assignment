@@ -62,4 +62,15 @@ public class UpperCaseCounterTest {
         Thread.sleep(1357);
         System.out.println("제한된 시간 내에 수행되면 테스트 Passed!");
     }
+
+    @Test
+    public void 숫자가_섞여있을때_대문자만_찾아내는지에_대한_테스트_코드(){
+
+        String str = "2019Y07M16D";
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result,is(3));
+        System.out.println("result :: " + result);
+        
+    }
+
 }
