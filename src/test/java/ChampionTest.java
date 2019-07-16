@@ -6,7 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
 
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
@@ -53,13 +54,17 @@ public class ChampionTest {
 
 
     //문자열 관련 테스트 anyOf, containsString, endWith
+    //by 황재완
     @Test
     public void testForRelatedString() {
-        String sampleString1 = "Player Focus";
-        String sampleString2 = "Player point";
-        String startString = "Player";
-        String endString = "point";
-//        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString)));
+        String sampleString1 = "Republic of Korea";
+        String sampleString2 = "The United States of America";
+        String startString = "Republic";
+        String endString = "America";
+        assertThat(sampleString1, endsWith("Korea"));
+        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString)));
+        assertThat(sampleString2, allOf(startsWith("The"), endsWith("America")));
+        assertThat(sampleString2, is(containsString(endString)));
 //        assertThat(sampleString2, is(endsWith(endString)));
     }
 
