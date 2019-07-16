@@ -19,7 +19,15 @@ public class UpperCaseCounterTest {
         assertTrue(numberOfUpperCaseCharactersInString==0);
     }
 
-     
+    @Test
+    public void 대문자들이_포함된_문자열을_전달했을_때_카운팅된_숫자와_맞는지_검증하는_테스트() {
+        String str = "LGTM";
+
+        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(numberOfUpperCaseCharactersInString,is(4));
+
+    }
+
     @Test
     public void 반겂울_전달했을_때_0을_리턴하는지에_대한_테스트() {
         String str = "";
@@ -27,16 +35,6 @@ public class UpperCaseCounterTest {
     }
 
   
-    @Test
-    public void 대문자들이_포함된_문자열을_전달했을_때_카운팅된_숫자와_맞는지_검증하는_테스트() {
-        String str = "ABCDEFGHIJ";
-
-        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-
-        //assertTrue로 맞는 테스트 코드 작성
-        //assertFalse로 틀리는 값을 넣어 테스트 작성
-        //assertThat 단정문을 사용해서 True인 테스트 코드 작성
-    }
 
    
     @Test
