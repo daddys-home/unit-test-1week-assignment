@@ -75,8 +75,11 @@ public class ChampionTest {
     }
 
     //anything 테스트
+    //by 황재완
     @Test
     public void shouldNotErrorGetReference() {
+        assertThat(championList.get(4), anything()); //값만 가져올 수 있다면 true
+        assertThat(championList.get(4).getName(), anything());
 //        assertThat(championList.get(2), anything());
     }
 
