@@ -49,9 +49,11 @@ public class UpperCaseCounterTest {
     }
 
    
-    @Test
+    @Test(expected=IndexOutOfBoundsException.class)
     public void 잘못된_값을_참조했을_때_IndexOutOfBoundsException_Exception이_발생하는지_테스트_코드_작성() {
-        new ArrayList<Object>().get(0);
+
+        new ArrayList<Object>().get(2);
+
     }
 
     //해당 메소드가 제한된 시간내에 실행되는지에 대한 테스트 코드 작성 : timeout 사용
