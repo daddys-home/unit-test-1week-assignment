@@ -111,10 +111,13 @@ public class ChampionTest {
     }
 
     //hasToString 활용 테스트
+    //by 황재완
     @Test
     public void shouldHaveSomeChampName() {
-        List<String> champListNames = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가느", "블라디미르");
-//        assertThat(champListNames.get(0), hasToString("루시안"));
+        List<String> champListNames = Arrays.asList("루시안", "애쉬", "조이", "갈리오", "모르가나", "블라디미르");
+        assertThat(champListNames.get(0), hasToString("루시안"));
+        assertThat(champListNames.get(1), hasToString("애쉬"));
+        assertThat(champListNames.get(3), hasToString("갈리오"));
     }
 
     //property와 value가 같은지 테스트
