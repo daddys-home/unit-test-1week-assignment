@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.notNullValue;
+
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
 
@@ -34,10 +37,11 @@ public class ChampionTest {
     }
 
     //notNullValue 활용한 테스트
+    //by 황재완
     @Test
     public void notNullCheck() {
-        String lck = "LCK";
-//        assertThat(lck, notNullValue());
+        String lpl = "LPL";
+        assertThat(lpl, notNullValue());
     }
 
     //nullValue 활용한 테스트
