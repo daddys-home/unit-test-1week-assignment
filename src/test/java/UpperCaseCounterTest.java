@@ -32,6 +32,10 @@ public class UpperCaseCounterTest {
     public void 반겂울_전달했을_때_0을_리턴하는지에_대한_테스트() {
         String str = "";
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        System.out.println("result::"+numberOfUpperCaseCharactersInString);
+        assertTrue(numberOfUpperCaseCharactersInString==0);
+
+    
     }
 
   
