@@ -158,5 +158,11 @@ public class ChampionTest {
 
     }
 
+    //hasItem 테스트
+    //by 황재완
+    @Test
+    public void testHasItem() {
+        assertThat(championList, hasItem(hasProperty("position", is("정글"))));
+    }
 
 }
