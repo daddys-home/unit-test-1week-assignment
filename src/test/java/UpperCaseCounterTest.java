@@ -1,10 +1,11 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+
+//작성자: 진태성
 
 public class UpperCaseCounterTest {
 
@@ -70,7 +71,17 @@ public class UpperCaseCounterTest {
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
         assertThat(result,is(3));
         System.out.println("result :: " + result);
-        
+
+    }
+
+    @Test
+    public void 아랍어_불어_국어_특수기호_소문자_대문자가_섞여있을때에_대한_테스트_코드(){
+        String str = "!!!Hi-안녕ㅇ웁스Enchantée<-독일어,아랍어->بلقائ";
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result,is(2));
+        System.out.println("result :: " + result);
+
+
     }
 
 }
