@@ -92,12 +92,15 @@ public class ChampionTest {
     }
 
     //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
+    //by 황재완
     @Test
     public void shouldSupportChampionIsTaric() {
         Champion supportChamp = new Champion("타릭", "바텀");
-//        assertThat("타릭", is(supportChamp.getName()));
-//        assertThat("타릭", is(equalTo(supportChamp.getName())));
-//        assertThat("타릭", equalTo(supportChamp.getName()));
+        assertThat("타릭", is(supportChamp.getName()));
+        assertThat("타릭", equalTo(supportChamp.getName()));
+        assertThat("타릭", is(supportChamp.getName()));
+        assertThat("타릭", is(equalTo(supportChamp.getName())));
+        assertThat("타릭", equalTo(supportChamp.getName()));
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
