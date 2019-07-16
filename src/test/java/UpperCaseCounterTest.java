@@ -35,19 +35,16 @@ public class UpperCaseCounterTest {
         System.out.println("result::"+numberOfUpperCaseCharactersInString);
         assertTrue(numberOfUpperCaseCharactersInString==0);
 
-    
+
     }
 
-  
 
    
     @Test
     public void 대소문자가_섞여_있을_때_정확히_카운팅_되는_지에_대한_테스트(){
-        String str = "ABCdefGHI";
+        String str = "Tesung";
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-        //assertTrue로 맞는 테스트 코드 작성
-        //assertFalse로 틀리는 값을 넣어 테스트 작성
-        //assertThat 단정문을 사용해서 True인 테스트 코드 작성
+        assertThat(result,is(1));
         System.out.println("result :: " + result);
     }
 
