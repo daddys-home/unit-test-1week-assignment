@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.number.OrderingComparison.greaterThan;
 import static org.junit.Assert.*;
 
@@ -37,11 +37,14 @@ public class CustomCalculatorTest {
     }
 
     //곱하기 테스트 작성
+    //Test by 영인
     @Test
     public void multiply() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.multiply(5,9);
-        /* 이곳에 테스트 코드를 작성하세요. */
+        int result = customCalculator.multiply(3,7);
+        assertThat(result,is(21));
+        assertThat(result,allOf(not(18),lessThan(22)));
+        assertThat(result,lessThanOrEqualTo(21));
         System.out.println("result :: " + result);
     }
 
