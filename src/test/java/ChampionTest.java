@@ -148,4 +148,15 @@ public class ChampionTest {
         assertThat("다리우스", is(champName));
     }
 
+    //sameInstance 테스트
+    //by 황재완
+    @Test
+    public void testIsTheSameInstance() {
+        Champion champion1 = new Champion("야스오","미드");
+        Champion champion2 = champion1;
+        assertThat(champion1, sameInstance(champion2));
+
+    }
+
+
 }
