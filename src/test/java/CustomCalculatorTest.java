@@ -10,11 +10,14 @@ public class CustomCalculatorTest {
     private CustomCalculator customCalculator;
 
     //더하기 테스트 작성
+    //Test by 영인
     @Test
     public void add() {
-        customCalculator = new CustomCalculator();
-        int result = customCalculator.add(10,15);
-        /* 이곳에 테스트 코드를 작성하세요. */
+        customCalculator= new CustomCalculator();
+        assertTrue(customCalculator.add(4,5)==9);
+        int result=customCalculator.add(5,2);
+        assertThat(result,is(7));
+
         System.out.println("result :: " + result);
     }
 
