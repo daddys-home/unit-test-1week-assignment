@@ -3,6 +3,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.number.OrderingComparison.greaterThan;
 import static org.junit.Assert.*;
 
 public class CustomCalculatorTest {
@@ -22,11 +24,15 @@ public class CustomCalculatorTest {
     }
 
     //빼기 테스트 작성
+    //Test by 영인
     @Test
     public void subtract() {
-        customCalculator = new CustomCalculator();
-        int result = customCalculator.subtract(23,10);
-        /* 이곳에 테스트 코드를 작성하세요. */
+        customCalculator= new CustomCalculator();
+        int result = customCalculator.subtract(14,10);
+        assertThat(result,not(3));
+        assertThat(result,greaterThan(3));
+        assertThat(result,is(4));
+
         System.out.println("result :: " + result);
     }
 
