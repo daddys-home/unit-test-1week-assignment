@@ -4,10 +4,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.Assert.assertTrue;
 
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
@@ -129,14 +131,21 @@ public class ChampionTest {
     }
 
     //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
+    //by 황재완
     @Test
     public void shouldTopChampionIsDarius() {
-//        Optional<Champion> filterdChampion = championList.stream()
-//                .filter(c -> c.getPosition().equals("탑"))
+//        Optional<Champion> filteredChampion  = championList.stream()
+//                .filter(c->c.getPosition().equals("바텀"))
 //                .findFirst();
-//        String champName = filterdChampion.get().getName();
-//        assertTrue(champName.equals("다리우스"));
-//        assertThat("다리우스", is(champName));
+//        String champName = filteredChampion.get().getName();
+//        assertThat("베인",is(champName));
+
+        Optional<Champion> filterdChampion = championList.stream()
+                .filter(c -> c.getPosition().equals("탑"))
+                .findFirst();
+        String champName = filterdChampion.get().getName();
+        assertTrue(champName.equals("다리우스"));
+        assertThat("다리우스", is(champName));
     }
 
 }
