@@ -33,10 +33,11 @@ public class ChampionTest {
     }
 
     //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    //이충희
     @Test
     public void givenCollectionWhenEmptyCorrect() {
-        List<String> emptyList = new ArrayList<>();
-//        assertThat(emptyList, empty());
+        List<Champion> emptyList = new ArrayList<>();
+        assertThat(emptyList, empty());
     }
 
     //notNullValue 활용한 테스트
