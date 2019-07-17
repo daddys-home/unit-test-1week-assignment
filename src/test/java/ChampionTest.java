@@ -73,10 +73,12 @@ public class ChampionTest {
     }
 
     //부동소수점 범위 closeTo 테스트
+    //이충희
     @Test
     public void testForFloatingPoint() {
-//        assertThat(3.14, closeTo(3, 0.2));
+        assertThat(1321.00, closeTo(1000, 500.0));
     }
+
 
     //anything 테스트
     //by 황재완
