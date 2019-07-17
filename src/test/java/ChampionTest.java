@@ -49,10 +49,11 @@ public class ChampionTest {
     }
 
     //nullValue 활용한 테스트
+    //by 이충희
     @Test
     public void givenStringWhenNullIsCorrect() {
-        String lck = null;
-//        assertThat(lck, nullValue());
+        String LPL= null;
+        assertThat(LPL, nullValue());
     }
 
 
