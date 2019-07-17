@@ -112,12 +112,12 @@ public class ChampionTest {
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
+    //이충희
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
+        assertThat(championList.get(0), hasProperty("name"));
+        assertThat(championList.get(1), hasProperty("name", equalTo("리신")));
     }
-
     //hasToString 활용 테스트
     //by 황재완
     @Test
