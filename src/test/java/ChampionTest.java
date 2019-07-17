@@ -178,4 +178,11 @@ public class ChampionTest {
         assertThat(championList.size(),lessThan(8));
 
     }
+    //instanceof 테스트
+    //이충희
+    @Test
+    public void 챔피언리스트는챔피언클래스로이루어져야한다(){
+        assertThat(championList.get(0),instanceOf(Champion.class));
+    }
+
 }
