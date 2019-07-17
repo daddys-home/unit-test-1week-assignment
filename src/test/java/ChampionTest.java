@@ -171,5 +171,11 @@ public class ChampionTest {
     public void testHasItem() {
         assertThat(championList, hasItem(hasProperty("position", is("정글"))));
     }
+    //lessThan테스트
+    //by이충희
+    @Test
+    public void 챔피언의숫자는8개보다적어야한다(){
+        assertThat(championList.size(),lessThan(8));
 
+    }
 }
