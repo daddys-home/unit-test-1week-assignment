@@ -33,10 +33,11 @@ public class ChampionTest {
     }
 
     //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    //이충희
     @Test
     public void givenCollectionWhenEmptyCorrect() {
-        List<String> emptyList = new ArrayList<>();
-//        assertThat(emptyList, empty());
+        List<Champion> emptyList = new ArrayList<>();
+        assertThat(emptyList, empty());
     }
 
     //notNullValue 활용한 테스트
@@ -48,10 +49,11 @@ public class ChampionTest {
     }
 
     //nullValue 활용한 테스트
+    //by 이충희
     @Test
     public void givenStringWhenNullIsCorrect() {
-        String lck = null;
-//        assertThat(lck, nullValue());
+        String LPL= null;
+        assertThat(LPL, nullValue());
     }
 
 
@@ -71,10 +73,12 @@ public class ChampionTest {
     }
 
     //부동소수점 범위 closeTo 테스트
+    //이충희
     @Test
     public void testForFloatingPoint() {
-//        assertThat(3.14, closeTo(3, 0.2));
+        assertThat(1321.00, closeTo(1000, 500.0));
     }
+
 
     //anything 테스트
     //by 황재완
@@ -86,11 +90,13 @@ public class ChampionTest {
     }
 
     //객체 크기 검증 테스트 hasSize
+    //이충희
     @Test
     public void shouldChampionCountFive() {
-//        assertTrue(championList.size() == 5);
-//        assertThat(championList.size(), is(5));
-//        assertThat(championList, hasSize(5));
+        championList.add(new Champion("티버","유사챔피언"));
+        assertTrue(championList.size() == 6);
+        assertThat(championList.size(), is(6));
+        assertThat(championList, hasSize(6));
     }
 
     //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
@@ -106,12 +112,12 @@ public class ChampionTest {
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
+    //이충희
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
+        assertThat(championList.get(0), hasProperty("name"));
+        assertThat(championList.get(1), hasProperty("name", equalTo("리신")));
     }
-
     //hasToString 활용 테스트
     //by 황재완
     @Test
@@ -123,11 +129,12 @@ public class ChampionTest {
     }
 
     //property와 value가 같은지 테스트
+    //이충희
     @Test
     public void shouldHaveSamePropertyAndValue() {
-        List<String> championNames1 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
+        List<String> championNames1 = Arrays.asList("갱플랭크", "세주아니", "카이사", "가렌", "케일", "볼리베어");
         List<String> championNames2 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
-//        assertThat(championNames1, samePropertyValuesAs(championNames2));
+        assertThat(championNames1, samePropertyValuesAs(championNames2));
     }
 
     //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
@@ -163,6 +170,19 @@ public class ChampionTest {
     @Test
     public void testHasItem() {
         assertThat(championList, hasItem(hasProperty("position", is("정글"))));
+    }
+    //lessThan테스트
+    //by이충희
+    @Test
+    public void 챔피언의숫자는8개보다적어야한다(){
+        assertThat(championList.size(),lessThan(8));
+
+    }
+    //instanceof 테스트
+    //이충희
+    @Test
+    public void 챔피언리스트는챔피언클래스로이루어져야한다(){
+        assertThat(championList.get(0),instanceOf(Champion.class));
     }
 
 }
