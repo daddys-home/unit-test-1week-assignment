@@ -129,11 +129,12 @@ public class ChampionTest {
     }
 
     //property와 value가 같은지 테스트
+    //이충희
     @Test
     public void shouldHaveSamePropertyAndValue() {
-        List<String> championNames1 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
+        List<String> championNames1 = Arrays.asList("갱플랭크", "세주아니", "카이사", "가렌", "케일", "볼리베어");
         List<String> championNames2 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
-//        assertThat(championNames1, samePropertyValuesAs(championNames2));
+        assertThat(championNames1, samePropertyValuesAs(championNames2));
     }
 
     //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
